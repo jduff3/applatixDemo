@@ -1,0 +1,13 @@
+type: service_template
+subtype: workflow
+name: hkmbuild
+description: hkmbuild example workflow
+inputs:
+  parameters:
+    commit:
+      default: "%%session.commit%%"
+    repo:
+      default: "%%session.repo%%"
+steps:
+- checkout:
+    template: hkmcheckout

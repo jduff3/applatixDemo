@@ -1,0 +1,22 @@
+type: service_template
+subtype: container
+name: hkmcheckout
+description: Checks out a source repository to /applatixDemo
+container:
+  resources:
+    mem_mib: 256
+    cpu_cores: 0.1
+    disk_gb: 10
+  image: docker.io/hkmconsultingllc/git:v1
+  docker_options: ""
+  command: "/script/checkout %%repo%% %%commit%%"
+inputs:
+  parameters:
+    commit:
+      default: "%%session.commit%%"
+    repo:
+      default: "%%session.repo%%"
+outputs:
+  artifacts:
+    code:
+      path: /applatixDemo

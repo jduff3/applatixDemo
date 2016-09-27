@@ -1,0 +1,30 @@
+---
+swagger: "2.0"
+info:
+  description: "Service returns system properties"
+  version: "1.0.0"
+  title: "System properties API"
+paths:
+  /system:
+    get:
+      description: "test"
+      operationId: "systemGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "propName"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/System"
+      x-swagger-router-controller: "Default"
+definitions:
+  System:
+    type: "object"
+    properties:
+      osVersion:
+        type: "string"

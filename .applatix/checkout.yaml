@@ -7,7 +7,7 @@ container:
     mem_mib: 256
     cpu_cores: 0.1
     disk_gb: 10
-  image: docker.io/hkmconsultingllc/git:v1
+  image: hkmconsultingllc/git:v1
   docker_options: ""
   command: "/script/checkout %%repo%% %%commit%%"
 inputs:

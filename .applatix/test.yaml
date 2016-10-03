@@ -14,7 +14,7 @@ container:
 inputs:
   artifacts:
   - from: "%%service.checkout_id.code%%"
-    path: "/opt/test"
+    path: "/opt/tests"
   parameters:
     CMD: {}
 outputs:

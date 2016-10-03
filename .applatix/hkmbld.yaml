@@ -15,10 +15,10 @@ steps:
 - build:
     template: nodejs-example
     parameters:
-       CMD: "sh -c 'hostname && cd /opt/app/systemProps/systemProperties && node index.js'"
+       CMD: "sh -c 'hostname && cd /opt/app/systemProps/systemProperties && node index.js && sleep 300 && exit 0'"
        checkout_id: "%%service.checkout.id%%"
 test:
    template: nodejs-test
    parameters:
-      CMD: "sh -c 'ls -ltr /opt/tests && cd /opt/tests/systemProperties/tests && /opt/app/SoapUI/bin/testrunner.sh systemProps.xml -e http://hkmnode:3000 -s GetProperitesCentOS7'"
+      CMD: "sh -c 'ls -ltr /opt/tests && sleep 60 && cd /opt/tests/systemProperties/tests && /opt/app/SoapUI/bin/testrunner.sh systemProps.xml -e http://hkmnode:3000 -s GetProperitesCentOS7'"
       checkout_id: "%%service.checkout.id%%"

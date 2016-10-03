@@ -15,7 +15,7 @@ steps:
 - build:
     template: nodejs-example
     parameters:
-       CMD: "sh -c 'hostname && cd /opt/app/systemProps/systemProperties && ./startup.sh && sleep 180'"
+       CMD: "sh -c 'cd /opt/app/systemProps/systemProperties && ./startup.sh && sleep 20 && exit 0'"
        checkout_id: "%%service.checkout.id%%"
 #  test:
 #   template: nodejs-test

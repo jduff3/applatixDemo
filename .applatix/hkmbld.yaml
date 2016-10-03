@@ -15,7 +15,7 @@ steps:
 - build:
     template: nodejs-example
     parameters:
-       CMD: "sh -c 'hostname && cd /opt/app/systemProps/systemProperties && node index.js && sleep 300 && exit 0'"
+       CMD: "sh -c 'hostname && cd /opt/app/systemProps/systemProperties && nohup node index.js > /dev/null 2>&1 & && sleep 300 && exit 0'"
        checkout_id: "%%service.checkout.id%%"
 test:
    template: nodejs-test

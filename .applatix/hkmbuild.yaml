@@ -38,6 +38,6 @@ steps:
     template: hkmcheckout
 - build:
     template: nodejs-example
-       parameters:
-         CMD: "sh -c 'cd /opt/app/systemProps && node index.js'"
-         checkout_id: "%%service.checkout.id%%"
+    parameters:
+       CMD: "sh -c 'cd /opt/app/systemProps && node index.js'"
+       checkout_id: "%%service.checkout.id%%"

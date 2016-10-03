@@ -15,7 +15,8 @@ steps:
 - build:
     template: nodejs-example
     parameters:
-       CMD: "sh -c 'cd /opt/app/systemProps/systemProperties && ./startup.sh && sleep 20 && exit 0'"
+       CMD: "sh -c 'while true; do echo "I am busy still" && sleep 1; done'"
+#      CMD: "sh -c 'cd /opt/app/systemProps/systemProperties && ./startup.sh && sleep 20 && exit 0'"
        checkout_id: "%%service.checkout.id%%"
 #  test:
 #   template: nodejs-test

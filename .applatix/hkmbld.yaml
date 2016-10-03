@@ -20,5 +20,5 @@ steps:
   test:
    template: nodejs-test
    parameters:
-      CMD: "sh -c 'ls -ltr /opt/tests && ping hkmnode && sleep 20 && cd /opt/tests/systemProperties/tests && /opt/app/SoapUI/bin/testrunner.sh systemProps.xml -e http://hkmnode:3000 -s GetProperitesCentOS7'"
+      CMD: "sh -c 'ls -ltr /opt/tests && sleep 20 && cd /opt/tests/systemProperties/tests && /opt/app/SoapUI/bin/testrunner.sh systemProps.xml -e http://hkmnode:3000 -s GetProperitesCentOS7'"
       checkout_id: "%%service.checkout.id%%"

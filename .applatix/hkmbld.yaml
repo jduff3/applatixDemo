@@ -17,7 +17,7 @@ steps:
     parameters:
        CMD: "sh -c 'hostname && cd /opt/app/systemProps/systemProperties && nohup node index.js > /dev/null 2>&1 &'"
        checkout_id: "%%service.checkout.id%%"
-test:
+  test:
    template: nodejs-test
    parameters:
       CMD: "sh -c 'ls -ltr /opt/tests && sleep 60 && cd /opt/tests/systemProperties/tests && /opt/app/SoapUI/bin/testrunner.sh systemProps.xml -e http://hkmnode:3000 -s GetProperitesCentOS7'"

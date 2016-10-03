@@ -1,7 +1,7 @@
 ---
 type: service_template
 subtype: container
-name: nodejs-systemprop-example
+name: nodejs-example
 description: nodejs example
 container:
   resources:
@@ -37,7 +37,7 @@ steps:
 - checkout:
     template: hkmcheckout
 - build:
-    template: nodejs-systemprop-example
+    template: nodejs-example
        parameters:
          CMD: "sh -c 'cd /opt/app/systemProps && node index.js'"
          checkout_id: "%%service.checkout.id%%"

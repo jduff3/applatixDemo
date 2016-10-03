@@ -1,20 +1,20 @@
 ---
 type: service_template
 subtype: container
-name: nodejs-example
-description: nodejs example
+name: nodejs-test
+description: nodejs-test example
 container:
   resources:
     mem_mib: 256
     cpu_cores: 0.1
     disk_gb: 0.2
-  image: "docker.local/hkmconsultingllc/centos:7"
-  docker_options: '--hostname hkmnode'
+  image: "docker.local/hkmconsultingllc/soapui:5.2.1"
+  docker_options: ''
   command: "%%CMD%%"
 inputs:
   artifacts:
   - from: "%%service.checkout_id.code%%"
-    path: "/opt/app/systemProps"
+    path: "/opt/test"
   parameters:
     CMD: {}
 outputs:

@@ -15,5 +15,5 @@ steps:
 - build:
     template: nodejs-example
     parameters:
-       CMD: "sh -c 'ls -la /opt/app && ls -ltr /opt/app/systemProps && cd /opt/app/systemProps && node index.js'"
+       CMD: "sh -c 'cd /opt/app/systemProps/systemProperties && node index.js'"
        checkout_id: "%%service.checkout.id%%"
